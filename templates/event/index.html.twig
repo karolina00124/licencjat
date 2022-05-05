@@ -1,0 +1,90 @@
+{% extends 'app_base.html.twig' %}
+
+    {% block title %}
+        {{ 'event_list_title'|trans }}
+    {% endblock %}
+
+    {% block body %}
+
+        <div class="index_title"> 
+	    {% if todolist is not null %}
+                {{ todolist.name }}
+            {% else %}
+            Wszystkie twoje zadania
+	    {% endif %}
+
+            <a href="{{ url('event_create') }}" title="{{ 'action_create'|trans }}"><i class="bi bi-plus-circle-fill">
+                </i></a>
+        </div>
+
+        {% if pagination is defined and pagination.items|length %}
+            <div class="navigation text-center">
+                {{ knp_pagination_render(pagination) }}
+            </div>
+
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>{{ 'event_done'|trans }}</th>
+                    <th>{{ knp_pagination_sortable(pagination, 'event_title'|trans, 'event.title') }}</th>
+                    <th>{{ knp_pagination_sortable(pagination, 'event_description'|trans, 'event.description') }}</th>
+                    <th>{{ knp_pagination_sortable(pagination, 'event_start_time'|trans, 'event.startTime') }}</th>
+                    <th>{{ knp_pagination_sortable(pagination, 'event_end_time'|trans, 'event.endTime') }}</th>
+
+                    <th>{{ 'label_actions'|trans }}</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for event in pagination.items %}
+                    <tr>
+            <td align="center" vlign="middle">
+			    <a href="{{ url('event_change_done', {id: event.id}) }}">
+			    {% if event.done %}
+                    <i id="check_done" class="bi bi-check2-square"></i>
+			    {% else %}
+                    <i id="check_not" class="bi bi-square"></i>
+			    {% endif %}
+			    </a>
+			</td>
+                        <td>{{ event.title }}</td>
+                        <td>{{ event.description }}</td>
+                        <td>{{ event.startTime.format('H:i d-m-Y') }}</td>
+                        <td>{{ event.endTime.format('H:i d-m-Y') }}</td>
+
+                        <td>
+                            {#
+                            <a class="btn btn-primary" href="{{ url('todolist_index', {'todolist': todolist.id}) }}">
+                                title="{{ 'action_open'|trans }}">
+                                {{ 'action_open'|trans }}
+                            </a>
+                            #}
+
+                            <a class="btn btn-outline-info btn-sm"  href="{{ url('event_edit', {id: event.id}) }}"
+                               title="{{ 'action_edit'|trans }}">
+                                {{ 'action_edit'|trans }}
+                            </a>
+                            <a class="btn btn-outline-danger btn-sm" href="{{ url('event_delete', {id: event.id}) }}"
+                               title="{{ 'action_delete'|trans }}">
+                                {{ 'action_delete'|trans }}
+                            </a>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+
+            <div class="navigation text-center">
+                {{ knp_pagination_render(pagination) }}
+            </div>
+
+        {% else %}
+            <p>
+                {{ 'message_empty_list'|trans }}
+            </p>
+        {% endif %}
+        <div class="btn_box">
+            <a href="{{ url('todolist_index') }}" class="btn1">
+                 <i class="bi bi-arrow-return-left"></i> {{ 'action_back_to_list'|trans }}
+            </a>
+        </div>
+    {% endblock %}

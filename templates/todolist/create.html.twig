@@ -1,0 +1,29 @@
+{% extends 'app_base.html.twig' %}
+
+{% block title %}
+    {{ 'title_todolist_create'|trans }}
+{% endblock %}
+
+{% block body %}
+    <div class="index_title">
+        {{ 'title_todolist_create'|trans }}</div>
+    <div class="container">
+        <div class="row">
+            <div class="col col-lg">
+                {{ form_start(form, { method: 'POST', action: url('todolist_create'), attr: {'novalidate': 'novalidate'} }) }}
+                <div class="form-group">
+                    {{ form_row(form.name, {'attr': {'class': 'form-control'}}) }}
+                </div>
+                <div class="form-group row float-sm-right">
+                    <input type="submit" value="{{ 'action_save'|trans }}" class="btn btn-primary" />
+                </div>
+                <div class="form-group row float-sm-left">
+                    <a href="{{ url('todolist_index') }}" class="btn btn-light">
+                        {{ 'action_back_to_list'|trans }}
+                    </a>
+                </div>
+                {{ form_end(form) }}
+            </div>
+        </div>
+    </div>
+{% endblock %}

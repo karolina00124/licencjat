@@ -1,0 +1,56 @@
+<div class="container" style="box-shadow: 0 4px 6px -7px #222;">
+<nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="{{ url('homepage_index') }}">{{ 'app_name'|trans }}</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        menu_how
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#">Wyznacz swoje cele</a>
+                        <a class="dropdown-item" href="#">Planuj</a>
+                        <a class="dropdown-item" href="#">Notuj</a>
+                        <a class="dropdown-item" href="#">Zapamiętuj lepiej</a>
+                        <a class="dropdown-item" href="#">Poznaj skutecznie techniki</a>
+                        <a class="dropdown-item" href="#">Monitoruj postępy</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link{% if pathInfo == '/login/' %} active{% endif %}" aria-current="page" href="{{ url('app_login') }}">{{ 'menu_login'|trans }}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link{% if pathInfo == '/todolist/' %} active{% endif %}" href="{{ url('homepage_index') }}">{{ 'menu_contact'|trans }}</a>
+                </li>
+                {% if app.user %}
+                <li class="nav-item">
+                    <a class="nav-link{% if pathInfo == '/profile/' %} active{% endif %}" href="{{ url('homepage_index') }}"><i id="icon_menu_prof" class="bi bi-person-circle"></i>{{ ' menu_profile'|trans }}</a>
+                </li>
+                {% endif %}
+
+
+                {#                <li class="nav-item dropdown">#}
+                {#                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">#}
+                {#                        Dropdown#}
+                {#                    </a>#}
+                {#                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">#}
+                {#                        <li><a class="dropdown-item" href="#">Action</a></li>#}
+                {#                        <li><a class="dropdown-item" href="#">Another action</a></li>#}
+                {#                        <li><hr class="dropdown-divider"></li>#}
+                {#                        <li><a class="dropdown-item" href="#">Something else here</a></li>#}
+                {#                    </ul>#}
+                {#                </li>#}
+                {#                <li class="nav-item">#}
+                {#                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>#}
+                {#                </li>#}
+            </ul>
+            {#            <form class="d-flex">#}
+            {#                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">#}
+            {#                <button class="btn btn-outline-success" type="submit">Search</button>#}
+            {#            </form>#}
+        </div>
+</nav>
+</div>

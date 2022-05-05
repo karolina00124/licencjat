@@ -1,0 +1,87 @@
+{% extends 'base.html.twig' %}
+
+    {% block body %}
+        <div class="container">
+            <div class="mainheader">
+                <div class="title">ogarniam się</div>
+                <div class="title2" >– aplikacja dla uczących się</div>
+                <p>Poznaj prosty sposób jak krok po kroku zaplanować swoją naukę i zorganizować swój czas!</p>
+            </div>
+        <h3>O co chodzi?</h3>
+            <span style="font-weight: bold;">Ogarniam się</span><span> to aplikacja, która pokaże ci, jak skutecznie się uczyć. Dowiesz się, w jaki sposób wyznaczyć cele, zaplanować naukę i monitorować swoje postępy. Opanujesz metody ułatwiające zapamiętywanie materiału oraz dowiesz się, jak poprawnie notować. </span>
+
+            <p class="beforelist">To nie sztywna teoria. Znajdziesz tutaj praktyczne porady i konkretne techniki, które będziesz mógł wykorzystać, aby usprawnić swoją naukę. Jako zarejestrowany użytkownik zyskasz też dostęp do przydatnych narzędzi, takich jak:</p>
+            <ul>
+                <li>planning, czyli planowanie czasu,</li>
+                <li>ćwiczenie pamięci,</li>
+                <li>cele.</li>
+            </ul>
+            <p>Nasza aplikacja pomoże ci wreszcie się ogarnąć!</p>
+
+
+         <h3>Jak korzystać z tej aplikacji?</h3>
+            <p style="margin-bottom: 0;">Skorzystaj ze schematu KROK PO KROKU, który w 6 etapach pomoże ci przejść przez proces nauki i pokaże, jak się ogarnąć. Zapoznaj się z naszymi poradami i wykonaj ćwiczenia, następnie zarejestruj się i przy pomocy naszych narzędzi wprowadź teorie w życie.</p>
+            <div class="btn_box"><a class="btn1" href="{{ url('app_register') }}" role="button">Zarejestruj się</a></div>
+
+
+            <h3>Jak się ogarnąć?</h3>
+            <p>KROK PO KROKU.</p>
+
+                <div class="row g-2">
+                    <div class="col-sm" style="padding-top: 1.5em;">
+                        <div class="p-3 bg-light">
+                            <h5>1. Wyznacz swoje cele.</h5>
+                            <p>Cel to podstawa, to twój RUMAK sukcesu w nauce. Dowiedz się jak go prawidłowo wyznaczyć oraz kontrolować realizację celu w codziennych zadaniach.</p>
+                            <div class="btn_box"><a class="btn2" href="{{ url('app_register') }}" role="button">Sprawdź</a></div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm" style="padding-top: 1.5em;">
+                        <div class="p-3 bg-light">
+                            <h5>2. Planuj.</h5>
+                            <p>Posiadanie celu to za mało, ważne jest, aby opracować plan jego realizacji i dobrze wykorzystać swój czas. Twórz harmonogramy miesięczne, tygodniowe i listy zadań do wykonania danego dni.</p>
+                            <div class="btn_box"><a class="btn2" href="{{ url('app_register') }}" role="button">Sprawdź</a></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm" style="padding-top: 1.5em;">
+                        <div class="p-3 bg-light">
+                            <h5>3. Notuj.</h5>
+                                <p>Poznaj odpowiedz na pytanie jak notować, żeby zapamiętać. Odkryj 3 skuteczne metody tworzenia notatek oraz dowiedz się jak z pomocą <span class="kursywa">sketchnotingu</span> wykorzystać potencjał prawej półkuli mózgu.</p>
+                                <div class="btn_box"><a class="btn2" href="{{ url('app_register') }}" role="button">Sprawdź</a></div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-sm" style="padding-top: 1.5em;">
+                        <div class="p-3 bg-light">
+                            <h5>4. Zapamiętuj lepiej.</h5>
+                            <p>Zaprzyjaźnij się ze swoim umysłem. Naucz się, jak wykorzystać potencjał mózgu i jak skutecznie zapamiętywać. Odkryj system aktywnych powtórek i rolę przerw w nauce.</p>
+                            <div class="btn_box"><a class="btn2" href="{{ url('app_register') }}" role="button">Sprawdź</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm" style="padding-top: 1.5em;">
+                        <div class="p-3 bg-light">
+                            <h5>5. Poznaj skuteczne metody.</h5>
+                            <p>Naucz się mnemotechnik, które pomogą ci w łatwy sposób opanować nowy materiał. Odkryj praktyczne triki, które pozwolą ci na radzenie sobie z pamięciówką.</p>
+
+                            <div class="btn_box"><a class="btn2" href="{{ url('app_register') }}" role="button">Sprawdź</a></div>
+                        </div>
+                        </div>
+
+                    <div class="col-sm" style="padding-top: 1.5em;">
+                        <div class="p-3 bg-light">
+                            <h5>6. Monitoruj postępy.</h5>
+                            <p>Sprawdzaj, jak idzie ci realizacja twoich planów i na bieżąco monitoruj swoje cele. To tak samo ważne dla ich osiągnięcia, jak ich wyznaczenie! Poznaj metodę działanie, wynik, cel.</p>
+                            <div class="btn_box"><a class="btn2" href="{{ url('app_register') }}" role="button">Sprawdź</a></div>
+                        </div>
+                    </div>
+
+                </div>
+
+        </div>
+    {% endblock %}

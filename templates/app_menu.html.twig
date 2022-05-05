@@ -1,0 +1,18 @@
+<nav role="navigation">
+    <div id="menuToggle">
+
+        <input type="checkbox" />
+
+        <span></span>
+        <span></span>
+        <span></span>
+
+
+        <ul id="menu">
+            <a href="{{ url('homepage_index') }}"><li>{{ 'home_page'|trans }}</li></a>
+            <a href="#"><li>{{ 'memory'|trans }}</li></a>
+            <a href="{{ url('todolist_index') }}"><li>{{ 'planning'|trans }}</li></a>
+            <a href="#"><li>{{ 'how_to'|trans }}</li></a>
+        </ul>
+    </div>
+</nav>
